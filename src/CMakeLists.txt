@@ -62,7 +62,7 @@ if( WIN32 )
 		dbghelp
 		dinput8
 #		dwmapi
-		dxguid
+#		dxguid
 		gdi32
 		ole32
 		oleaut32
@@ -1389,6 +1389,7 @@ include_directories(
 	../libraries/ZWidget/include
 	../libraries/range_map/include
 	${SYSTEM_SOURCES_DIR}
+	fix
 )
 
 set_target_properties( zdoom PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${ZDOOM_OUTPUT_DIR} )

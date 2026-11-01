@@ -1,12 +1,237 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>UZDoom-WinXP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UZDoom-WinXP | Doom Source Port for Windows XP</title>
+    <style>
+    	
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --text-muted: #8b949e;
+            --doom-green: #39ff14;
+            --doom-red: #ff3333;
+            --border-color: #30363d;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 750px;
+            width: 100%;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+        }
+
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--doom-red);
+            color: #000000;
+            padding: 2px 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 2rem;
+        }
+
+        .badge-tech {
+            background-color: #21262d;
+            border: 1px solid var(--border-color);
+            color: var(--doom-green);
+        }
+
+        p.lead {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--doom-green);
+            margin-top: 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .red-title {
+            color: var(--doom-red);
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #21262d;
+            color: var(--doom-green);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s, border-color 0.2s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: #30363d;
+            border-color: var(--doom-green);
+        }
+
+        .btn-primary {
+            background-color: #1b4d13;
+            color: #ffffff;
+            border: 1px solid var(--doom-green);
+        }
+
+        .btn-primary:hover {
+            background-color: #236618;
+        }
+
+        .copyright-list {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .copyright-list li {
+            margin-bottom: 4px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        a.inline-link {
+            color: var(--doom-green);
+            text-decoration: underline;
+        }
+        a.inline-link:hover {
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
-    <h1>UZDoom-WinXP Source Port</h1>
-    <p>Windows XP 32 Bit Backport for UZDoom. Repository: 
-       <a href="https://github.com/DanielV-git/UZDoom-WinXP">https://github.com/DanielV-git/UZDoom-WinXP</a>
-    </p>
+
+<div class="container">
+    <header>
+        <div class="badge-container">
+            <span class="badge">WIN XP PORT</span>
+            <span class="badge badge-tech">UZDOOM</span>
+            <span class="badge badge-tech">OPENGL</span>
+            <span class="badge badge-tech">VULKAN</span>
+            <span class="badge badge-tech">GPL v3</span>
+        </div>
+        <h1>UZDoom-WinXP</h1>
+        <p class="lead">An UZDoom WinXP Port for old gaming machines running Windows XP.</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>About the Project</h2>
+            <p>This UZDoom backport targets vintage gaming rigs that will stay on Windows XP. It actively backports modern API implementations used in the main UZDoom repository, giving retro operating system native access to the latest source developments.</p>
+            
+            <div class="btn-container">
+                <a href="https://github.com/DanielV-git/UZDoom-WinXP/releases" class="btn btn-primary" target="_blank">View Releases & Downloads</a>
+                <a href="https://github.com/DanielV-git/UZDoom-WinXP" class="btn" target="_blank">Access Source Code</a>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Latest Release Notes & Subsystems</h2>
+            <p>tested on:</p>
+            <ul>
+            	    <li><strong>WinXP SP3 - 32 Bit</strong>  - real machine, Core2Duo 3.0 GHz, Geforce GTX 680, OpenGL</li>
+							    <li><strong>WinXP SP3 - 32 Bit</strong>  - VM, software renderer</li>
+							    <li><strong>Win7 SP1 - 32 Bit</strong>  - real machine, Core2Duo 3.0 GHz, Geforce GTX 680, OpenGL and Vulkan</li>
+							    <li><strong>Win11 - 64 Bit</strong>  - real laptop, Core i7, Intel UHD 620, Vulkan</li>
+            </ul>
+            <p>tested with:</p>
+            <ul>
+							    <li>Doom1 and Doom2 Wads, no additional mods</li>
+							    <li>Brutal Doom v22 Test4</li>
+							    <li>Project Brutality 0.4.1</li>
+							    <li>HD Textures HRRP_no_Weapons_no_Col and NeuralUpscale2x_v0.95</li>
+							    <li>ZDL 3.2.2.3 beta</li>
+							    <li>some Megawads from the archive</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2 class="red-title">Licensing & Credits</h2>
+            <p>Source code licensed under the <strong>GPL v3</strong>. Read the official <a href="https://gnu.org" class="inline-link" target="_blank">GPL v3 Quick Guide</a>.</p>
+            <ul class="copyright-list">
+                <li>&copy; 1993-1996 id Software</li>
+                <li>&copy; 1999-2016 Marisa Heit</li>
+                <li>&copy; 2002-2016 Christoph Oelckers</li>
+                <li>&copy; 2017-2025 GZDoom Maintainers and Contributors</li>
+                <li>&copy; 2025-2026 UZDoom Maintainers and Contributors</li>
+                <li>&copy; 2026 DanielV</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>UZDoom-WinXP is an independent open-source project by DanielV. Doom is a registered trademark of id Software / ZeniMax Media.</p>
+    </footer>
+</div>
+
 </body>
 </html>

@@ -13,6 +13,11 @@
 // limitations under the License.
 //
 
+#ifdef BUILD_TARGET_WXP32
+#include "condition_fix.h"
+#include "lock_fix.h"
+#endif
+
 #ifndef ABSL_SYNCHRONIZATION_INTERNAL_WAITER_H_
 #define ABSL_SYNCHRONIZATION_INTERNAL_WAITER_H_
 

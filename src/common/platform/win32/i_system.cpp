@@ -827,11 +827,22 @@ void I_OpenShellFolder(const char* infolder)
 FString FStringTable::GetSystemLocale()
 {
 	wchar_t LocaleName[LOCALE_NAME_MAX_LENGTH];
-
+#ifndef BUILD_TARGET_WXP32
 	if (GetUserDefaultLocaleName(LocaleName, LOCALE_NAME_MAX_LENGTH) > 0)
 	{
 		return FString(LocaleName);
 	}
+#else
+	LCID lcid = GetUserDefaultLCID();
+	wchar_t lang[8] = { 0 };
+	wchar_t ctry[8] = { 0 };
 
+	if (GetLocaleInfoW(lcid, LOCALE_SISO639LANGNAME, lang, 8) > 0 &&
+		GetLocaleInfoW(lcid, LOCALE_SISO3166CTRYNAME, ctry, 8) > 0)
+	{
+		_snwprintf(LocaleName, LOCALE_NAME_MAX_LENGTH, L"%s-%s", lang, ctry);
+		return FString(LocaleName);
+	}
+#endif
 	return "en-US";
 }

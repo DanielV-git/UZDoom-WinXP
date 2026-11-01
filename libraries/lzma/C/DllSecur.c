@@ -37,7 +37,9 @@ static const char * const g_Dlls =
   DELIM  "setupapi"
   DELIM  "apphelp"
   DELIM  "propsys"
-  DELIM  "dwmapi"
+#ifndef BUILD_TARGET_WXP32
+	DELIM  "dwmapi"
+#endif
   DELIM  "cryptbase"
   DELIM  "oleacc"
   DELIM  "clbcatq"

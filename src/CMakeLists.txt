@@ -61,7 +61,7 @@ if( WIN32 )
 		comdlg32
 		dbghelp
 		dinput8
-		dwmapi
+#		dwmapi
 		dxguid
 		gdi32
 		ole32

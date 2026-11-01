@@ -1,6 +1,11 @@
 #ifndef _GLIBSTUBS_H
 #define _GLIBSTUBS_H
 
+#ifdef BUILD_TARGET_WXP32
+#include "condition_fix.h"
+#include "lock_fix.h"
+#endif
+
 #ifdef WIN32
 #include <Windows.h>
 #include <assert.h>

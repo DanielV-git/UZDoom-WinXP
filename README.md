@@ -5,6 +5,9 @@
 ## Runs with OpenGL under Win XP 32Bit
 ## Runs with OpenGL or Vulkan under Win7 32Bit
 
+You can disable graphical loading screen by adding "-nostartup" for classic look and feel with printouts.
+
+
 **Copyrights:**
 * Copyright 1993-1996 id Software
 * Copyright 1999-2016 Marisa Heit

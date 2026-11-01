@@ -106,12 +106,32 @@ InterfaceTheme GetSystemTheme()
 
 	DWORD use_light = -1;
 	DWORD cb_data = sizeof(use_light);
+#ifndef BUILD_TARGET_WXP32
 	if (ERROR_SUCCESS == RegGetValueW( HKEY_CURRENT_USER,
 		L"Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
 		L"AppsUseLightTheme", RRF_RT_REG_DWORD, nullptr, &use_light, &cb_data))
 	{
-		result = use_light == 0? Dark: Light;
+		result = use_light == 0 ? Dark : Light;
 	}
+#else
+	HKEY hKey;
+
+	if (ERROR_SUCCESS == RegOpenKeyExW(HKEY_CURRENT_USER,
+		L"Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+		0, KEY_QUERY_VALUE, &hKey))
+	{
+		DWORD dwType = 0;
+
+		if (ERROR_SUCCESS == RegQueryValueExW(hKey, L"AppsUseLightTheme",
+			nullptr, &dwType, reinterpret_cast<LPBYTE>(&use_light), &cb_data))
+		{
+				result = use_light == 0 ? Dark : Light;
+		}
+
+		RegCloseKey(hKey);
+	}
+#endif
+
 
 	HIGHCONTRASTW hc = {0};
 	hc.cbSize = sizeof(HIGHCONTRASTW);

@@ -4,10 +4,10 @@
 #include <stdexcept>
 #include <cmath>
 #include <vector>
-#include <dwmapi.h>
 #include <malloc.h>
 
 #ifndef BUILD_TARGET_WXP32
+	#include <dwmapi.h>
 	#pragma comment(lib, "dwmapi.lib")
 #else
 	UINT GetDpiForWindow_XP(HWND hWnd)
@@ -605,8 +605,11 @@ void Win32DisplayWindow::PresentBitmap(int width, int height, const uint32_t* pi
 LRESULT Win32DisplayWindow::OnWindowMessage(UINT msg, WPARAM wparam, LPARAM lparam)
 {
 	LPARAM result = 0;
+
+#ifndef BUILD_TARGET_WXP32
 	if (DwmDefWindowProc(WindowHandle.hwnd, msg, wparam, lparam, &result))
 		return result;
+#endif
 
 	if (msg == WM_INPUT)
 	{

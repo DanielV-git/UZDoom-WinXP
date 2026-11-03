@@ -1,6 +1,6 @@
-# Welcome to UZDoom-WinXP!
+# Welcome to UZDoomXP
 
-## UZDoom-WinXP is for old gaming machines with Windows XP. Such as mine, which will stay forever on XP. Trying to backport every Win6+ implementation used in main repository of UZDoom.
+## UZDoomXP is for old gaming machines with Windows XP. Such as mine, which will stay forever on XP. Trying to backport every Win6+ implementation used in main repository of UZDoom.
 
 ## Runs with OpenGL under Win XP 32Bit
 ## Runs with OpenGL or Vulkan under Win7 32Bit
@@ -27,6 +27,7 @@ You can disable graphical loading screen by adding "-nostartup" for classic look
 - v14.16 v141_xp toolset
 - WinSDK 7.1A
 - CMAKE 4.3.0
+- this Repo
 - Settings:
 - - C++ Language: /permissive
   - C++ Language: ISO C++ 17
